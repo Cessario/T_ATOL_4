@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Clarifai API</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli" />
+    <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="analyze.js"></script>
+    <script>
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var param_image = url.searchParams.get("image");
+        window.onload = function() {
+            document.getElementById('showimg').src = param_image;
+            uploadImage(param_image);
+        } 
+    </script>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="header-text">Analyze My Image!</h1>
+    </header>
+    <div class="container">
+      <div class="upload-photo">
+        <div class="photo-container">
+          <img id="showimg" src="">
+        </div>
+      </div>
+      <div class="analysis" id="analysis">
+      </div>
+    </div>
+  </body>
+</html>

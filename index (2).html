@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+        <head>
+                <!--INI CDN Jangan diapa-apain oke-->
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>Tugas UAS</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+                <!-- Bootstrap Date-Picker Plugin -->
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/> 
+                <script>
+                        $(document).ready(function(){
+                            var date_input=$('input[name="dateValue"]'); //our date input has the name "date"
+                            var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+                            date_input.datepicker({
+                                format: 'yyyy-mm-dd',
+                                container: container,
+                                todayHighlight: true,
+                                autoclose: true,
+                            })
+                        })
+                    </script>
+                    <script type="text/javascript" src="rover.js"></script>
+                       <style>
+                            body {
+                                background-image: url("");
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                            }
+                        </style>
+            </head>
+
+
+					<div>
+					    <legend>Tips</legend>
+                        <p>
+				        <ul>
+				        	<li>Most rovers did not start taking photos until several days after landing.</li>
+				            <li>Curiosity landed on: 2012-08-06</li>
+				            <li>Opportunity landed on: 2004-01-25</li>
+				            <li>Spirit landed on: 2004-01-04</li>
+				            <li>Note : Setelah Gambar muncul klik next dan tunggu Analisa gambar sampai muncul</li>
+				        </ul>
+				        </p>
+
+					<form>
+				      <fieldset>
+                        <legend>Date Input (YYYY-MM-DD)</legend>
+                        
+                        <div class="bootstrap-iso">
+                                <div class="container-fluid">
+                                 <div class="row">
+                                  <div class="col-md-6 col-sm-6 col-xs-12">
+                                   <!-- Form code begins -->
+                                     <div class="form-group"> 
+                                     <!-- Date input -->
+                                       <input class="form-control" id="dateValue" name="dateValue" placeholder="YYYY-MM-DD" type="text"/>
+                                     </div>
+                                    <!-- Form code ends --> 
+                                   </div>
+                                 </div>    
+                                </div>
+                            </div>
+
+
+				       <!----<label for="dateValue"></label>
+				        <input type="text" name="dateValue" id="dateValue">-->
+				        <p>Rover Selection
+				            <br />
+				            <label>
+				                <input type="radio" id="button1" name="rover" value="curioustity" />Curioustity</label>
+				            <label>
+				                <input type="radio" id="button2" name="rover" value="opportunity" />Opportunity</label>
+				            <label>
+				                <input type="radio" id="button3" name="rover" value="spirit" />Spirit</label>
+				        </p>
+				        <input type="submit" id="dateInput">
+
+				      </fieldset>
+
+				    </form>
+				    <div>
+				      
+				      <h2>Image Status</h2>
+				        <span>Image Retrieval Status (Status Pengambilan): </span><span id="imageStatus"></span>
+				        <br>
+				        <span>Rover Name: </span><span id="roverCaption"></span>
+				        <br>
+				        <span>Landing Date (Perkiraan Rover Mendarat): </span><span id="landingCaption"></span>
+				        <br>
+				        <span>Expected End Date (Misi Selesai Rover): </span><span id="endingCaption"></span>
+				        <br>
+				        <h2>Rover Image</h2>
+				      <img id="imageID" src=""/>
+				    </div>
+				    <div>
+				        <a id="nextbtn" href=mars.html><button>Next</button></a>
+				    </div>
+
+					</div>
+                    </head>
+</html>
